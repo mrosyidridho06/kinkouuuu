@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 22, 2021 at 08:44 AM
+-- Generation Time: Sep 22, 2021 at 10:00 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.23
 
@@ -164,10 +164,11 @@ INSERT INTO `kategori` (`id`, `namakategori`, `created_at`, `updated_at`) VALUES
 --
 
 CREATE TABLE `layanan_berobat` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+  `id` bigint(20) NOT NULL,
   `hewan_id` bigint(20) NOT NULL,
   `customer_id` bigint(20) NOT NULL,
   `penyakit_id` bigint(20) NOT NULL,
+  `status_op_id` bigint(20) NOT NULL,
   `tglobat` date NOT NULL,
   `biayaobat` double NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -178,27 +179,8 @@ CREATE TABLE `layanan_berobat` (
 -- Dumping data for table `layanan_berobat`
 --
 
-INSERT INTO `layanan_berobat` (`id`, `hewan_id`, `customer_id`, `penyakit_id`, `tglobat`, `biayaobat`, `created_at`, `updated_at`) VALUES
-(1, 4, 1, 2, '2021-09-20', 180000, '2021-09-20 22:49:32', '2021-09-21 00:00:16'),
-(4, 2, 2, 1, '2021-09-01', 200000, '2021-09-21 18:55:17', '2021-09-21 18:55:17'),
-(5, 2, 2, 1, '2021-09-01', 200000, '2021-09-21 18:55:17', '2021-09-21 18:55:17'),
-(8, 3, 3, 1, '2021-09-20', 20000, '2021-09-21 21:26:58', '2021-09-21 21:26:58'),
-(9, 3, 3, 1, '2021-09-20', 0, '2021-09-21 21:26:58', '2021-09-21 21:42:26'),
-(12, 1, 1, 1, '2021-09-21', 0, '2021-09-21 21:35:49', '2021-09-21 21:35:49'),
-(13, 1, 1, 2, '2021-09-21', 0, '2021-09-21 21:35:59', '2021-09-21 21:35:59'),
-(14, 2, 2, 1, '2021-09-15', 0, '2021-09-21 21:40:54', '2021-09-21 21:42:16'),
-(15, 3, 3, 1, '2021-09-17', 0, '2021-09-21 21:42:38', '2021-09-21 21:42:38'),
-(16, 1, 1, 1, '2021-09-21', 0, '2021-09-21 21:45:19', '2021-09-21 21:45:19'),
-(17, 5, 1, 1, '2021-09-21', 0, '2021-09-21 21:47:27', '2021-09-21 21:53:46'),
-(18, 1, 1, 1, '2021-09-21', 0, '2021-09-21 21:49:30', '2021-09-21 22:00:05'),
-(19, 3, 3, 2, '2021-09-14', 1, '2021-09-21 21:49:54', '2021-09-21 21:49:54'),
-(20, 1, 1, 1, '2021-09-01', 1, '2021-09-21 21:50:57', '2021-09-21 21:50:57'),
-(21, 3, 1, 1, '2021-09-02', 1, '2021-09-21 21:52:05', '2021-09-21 21:52:05'),
-(22, 3, 3, 1, '2021-09-03', 1, '2021-09-21 21:53:10', '2021-09-21 21:53:10'),
-(23, 1, 1, 2, '2021-09-14', 1, '2021-09-21 21:53:55', '2021-09-21 21:53:55'),
-(25, 4, 2, 1, '2021-09-15', 1, '2021-09-21 21:57:41', '2021-09-21 21:57:41'),
-(26, 1, 1, 2, '2021-09-21', 0, '2021-09-21 22:01:17', '2021-09-21 22:01:17'),
-(27, 3, 3, 2, '2021-08-17', 0, '2021-09-21 22:01:47', '2021-09-21 22:01:47');
+INSERT INTO `layanan_berobat` (`id`, `hewan_id`, `customer_id`, `penyakit_id`, `status_op_id`, `tglobat`, `biayaobat`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 2, 1, '2021-09-12', 2000000, '2021-09-21 23:55:46', '2021-09-21 23:55:46');
 
 -- --------------------------------------------------------
 
@@ -286,7 +268,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (15, '2021_09_21_032306_create_layanan__berobats_table', 11),
 (16, '2021_09_21_063400_create_layanan_berobats_table', 12),
 (17, '2021_09_22_002216_create_layanan_penitipans_table', 13),
-(18, '2021_09_22_021135_create_rekam_medis_table', 14);
+(18, '2021_09_22_021135_create_rekam_medis_table', 14),
+(19, '2021_09_22_071223_create_status__o_p_s_table', 15);
 
 -- --------------------------------------------------------
 
@@ -347,10 +330,11 @@ CREATE TABLE `personal_access_tokens` (
 --
 
 CREATE TABLE `rekam_medis` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+  `id` bigint(20) NOT NULL,
   `hewan_id` bigint(20) NOT NULL,
   `customer_id` bigint(20) NOT NULL,
   `penyakit_id` bigint(20) NOT NULL,
+  `status_op_id` bigint(20) NOT NULL,
   `tglobat` date NOT NULL,
   `biayaobat` double NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -361,18 +345,29 @@ CREATE TABLE `rekam_medis` (
 -- Dumping data for table `rekam_medis`
 --
 
-INSERT INTO `rekam_medis` (`id`, `hewan_id`, `customer_id`, `penyakit_id`, `tglobat`, `biayaobat`, `created_at`, `updated_at`) VALUES
-(1, 5, 2, 2, '2021-09-21', 180000, '2021-09-21 21:28:19', '2021-09-21 21:28:19'),
-(2, 2, 2, 2, '2021-09-02', 180000, '2021-09-21 21:28:58', '2021-09-21 21:28:58'),
-(3, 2, 2, 1, '2021-09-15', 0, '2021-09-21 21:40:54', '2021-09-21 21:40:54'),
-(4, 1, 1, 1, '2021-09-21', 0, '2021-09-21 21:49:30', '2021-09-21 21:49:30'),
-(5, 3, 3, 2, '2021-09-14', 0, '2021-09-21 21:49:54', '2021-09-21 21:49:54'),
-(6, 1, 1, 1, '2021-09-01', 0, '2021-09-21 21:50:57', '2021-09-21 21:50:57'),
-(7, 3, 3, 1, '2021-09-03', 0, '2021-09-21 21:53:10', '2021-09-21 21:53:10'),
-(8, 1, 1, 2, '2021-09-14', 0, '2021-09-21 21:53:55', '2021-09-21 21:53:55'),
-(9, 1, 1, 2, '2021-09-01', 0, '2021-09-21 21:55:25', '2021-09-21 21:55:25'),
-(10, 1, 1, 2, '2021-09-21', 0, '2021-09-21 22:01:17', '2021-09-21 22:01:17'),
-(11, 3, 3, 2, '2021-08-17', 0, '2021-09-21 22:01:47', '2021-09-21 22:01:47');
+INSERT INTO `rekam_medis` (`id`, `hewan_id`, `customer_id`, `penyakit_id`, `status_op_id`, `tglobat`, `biayaobat`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 2, 1, '2021-09-12', 2000000, '2021-09-21 23:55:46', '2021-09-21 23:55:46');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `status_op`
+--
+
+CREATE TABLE `status_op` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `status_op`
+--
+
+INSERT INTO `status_op` (`id`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Operasi', NULL, NULL),
+(2, 'Tidak Operasi', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -483,6 +478,12 @@ ALTER TABLE `rekam_medis`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `status_op`
+--
+ALTER TABLE `status_op`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -533,7 +534,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `layanan_berobat`
 --
 ALTER TABLE `layanan_berobat`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `layanan_grooming`
@@ -551,7 +552,7 @@ ALTER TABLE `layanan_penitipan`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `penyakit`
@@ -569,7 +570,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `rekam_medis`
 --
 ALTER TABLE `rekam_medis`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `status_op`
+--
+ALTER TABLE `status_op`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
