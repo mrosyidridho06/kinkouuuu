@@ -67,7 +67,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td>{{ $item->penyakit->namapenyakit }}</td>
                     <td>{{ $item->status_op->status }}</td>
                     <td>{{ $item->tglobat }}</td>
-                    <td>{{ $item->biayaobat }}</td>
+                    <td><?php echo number_format($item->biayaobat); ?></td>
                     <td>
                         <a href="{{ url('berobat/edit-layanan-berobat',$item->id) }}"><i class="fas fa-edit"></i></a> | <a href="{{ url('berobat/delete-layanan-berobat',$item->id) }}"><i class="fas fa-trash-alt" style="color: red"></i></a>
                     </td>
