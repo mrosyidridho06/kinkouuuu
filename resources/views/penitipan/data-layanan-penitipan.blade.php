@@ -45,6 +45,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="card-tools">
                   <a href="{{ route('create-layanan-penitipan') }}" class="btn btn-success">Tambah Data <i class="fas fa-plus-square"></i></a>
                 </div>
+                <div class="card-tools">
+                  <a href="{{ route('print-layanan-penitipan') }}" class="btn btn-primary">Print PDF <i class="fas fa-plus-square"></i></a>
+                </div>
             </div>
             
             <div class="card-body">

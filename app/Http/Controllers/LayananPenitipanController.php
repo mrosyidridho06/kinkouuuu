@@ -103,4 +103,10 @@ class LayananPenitipanController extends Controller
         $titip->delete();
         return back()->with('info', 'Data Berhasil Dihapus');
     }
+
+    public function print()
+    {
+        $datatitip = LayananPenitipan::all();
+        return view('penitipan/print-layanan-penitipan', compact('datatitip'));
+    }
 }
