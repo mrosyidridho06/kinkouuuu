@@ -72,6 +72,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </select>
                 </div>
                 <div class="form-group">
+                  <select class="form-control select2" style="width:100%;" name="status_op_id" id="status_op_id">
+                    <option disabled value>Pilih Status</option>
+                      @foreach ($status as $item)
+                      <option value="{{ $item->id }}">{{ $item->status }}</option>  
+                      @endforeach
+                  </select>
+                </div>
+                <div class="form-group">
                   <input type="date" name="tglobat" id="tglobat" class="form-control" placeholder="Tanggal Berobat">
                 </div>
                 <div class="form-group">

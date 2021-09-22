@@ -49,8 +49,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <th>Nama Hewan</th>
                     <th>Nama Customer</th>
                     <th>Nama Penyakit</th>
+                    <th>Status Operasi</th>
                     <th>Tanggal</th>
-                    <th>Biaya</th>
+                    <th>Total Biaya</th>
                   </tr>
                   @foreach ($datarm as $item)
                   <tr>
@@ -58,6 +59,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td>{{ $item->hewan->namahewan }}</td>
                     <td>{{ $item->customer->namacust }}</td>
                     <td>{{ $item->penyakit->namapenyakit }}</td>
+                    <td>{{ $item->status_op->status }}</td>
                     <td>{{ $item->tglobat }}</td>
                     <td>{{ $item->biayaobat }}</td>
                   </tr>

@@ -6,6 +6,7 @@ use App\Models\Customer;
 use App\Models\Hewan;
 use App\Models\Penyakit;
 use App\Models\RekamMedis;
+use App\Models\Status_OP;
 use Illuminate\Http\Request;
 
 use function GuzzleHttp\Promise\all;
@@ -19,7 +20,7 @@ class RekamMedisController extends Controller
      */
     public function index()
     {
-        $datarm = RekamMedis::with('hewan','customer','penyakit')->paginate(10);
+        $datarm = RekamMedis::with('hewan','customer','penyakit','status_op')->paginate(50);
         return view('rekam_medis.data-rekam-medis', compact('datarm'));
     }
 
@@ -33,7 +34,8 @@ class RekamMedisController extends Controller
         $hwn = Hewan::all();
         $cust = Customer::all();
         $pykt = Penyakit::all();
-        return view('rekam_medis.create-rekam-medis',compact('hwn','cust','pykt'));
+        $status = Status_OP::all();
+        return view('rekam_medis.create-rekam-medis',compact('hwn','cust','pykt','status'));
     }
 
     /**
@@ -48,6 +50,7 @@ class RekamMedisController extends Controller
             'hewan_id' => $request->hewan_id,
             'customer_id' => $request->customer_id,
             'penyakit_id' => $request->penyakit_id,
+            'status_op_id' => $request->status_op_id,
             'tglobat' => $request->tglobat,
             'biayaobat' => $request->biayaobat,
         ]);
@@ -77,8 +80,9 @@ class RekamMedisController extends Controller
         $hwn = Hewan::all();
         $cust = Customer::all();
         $pykt = Penyakit::all();
-        $rm = RekamMedis::with('hewan','customer','penyakit')->findorfail($id);
-        return view('/rekam_medis/edit-rekam-medis',compact('rm','hwn','cust','pykt'));
+        $status = Status_OP::all();
+        $rm = RekamMedis::with('hewan','customer','penyakit','status_op')->findorfail($id);
+        return view('/rekam_medis/edit-rekam-medis',compact('rm','hwn','cust','pykt','status'));
     }
 
     /**

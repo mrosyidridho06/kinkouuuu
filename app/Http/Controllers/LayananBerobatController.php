@@ -7,6 +7,7 @@ use App\Models\Hewan;
 use App\Models\Penyakit;
 use App\Models\LayananBerobat;
 use App\Models\RekamMedis;
+use App\Models\Status_OP;
 use Illuminate\Http\Request;
 
 class LayananBerobatController extends Controller
@@ -19,7 +20,7 @@ class LayananBerobatController extends Controller
 
     public function index()
     {
-        $datalyob = LayananBerobat::with('hewan','customer','penyakit')->paginate(50);
+        $datalyob = LayananBerobat::with('hewan','customer','penyakit','status_op')->paginate(50);
         return view('berobat.data-layanan-berobat', compact('datalyob'));
     }
 
@@ -33,7 +34,8 @@ class LayananBerobatController extends Controller
         $hwn = Hewan::all();
         $cust = Customer::all();
         $pykt = Penyakit::all();
-        return view('berobat.create-layanan-berobat',compact('hwn','cust','pykt'));
+        $status = Status_OP::all();
+        return view('berobat.create-layanan-berobat',compact('hwn','cust','pykt','status'));
     }
 
     /**
@@ -48,6 +50,7 @@ class LayananBerobatController extends Controller
             'hewan_id' => $request->hewan_id,
             'customer_id' => $request->customer_id,
             'penyakit_id' => $request->penyakit_id,
+            'status_op_id' => $request->status_op_id,
             'tglobat' => $request->tglobat,
             'biayaobat' => $request->biayaobat,
         ]);
@@ -56,6 +59,7 @@ class LayananBerobatController extends Controller
             'hewan_id' => $request->hewan_id,
             'customer_id' => $request->customer_id,
             'penyakit_id' => $request->penyakit_id,
+            'status_op_id' => $request->status_op_id,
             'tglobat' => $request->tglobat,
             'biayaobat' => $request->biayaobat,
         ]);
@@ -85,8 +89,9 @@ class LayananBerobatController extends Controller
         $hwn = Hewan::all();
         $cust = Customer::all();
         $pykt = Penyakit::all();
-        $lyob = LayananBerobat::with('hewan','customer','penyakit')->findorfail($id);
-        return view('/berobat/edit-layanan-berobat',compact('lyob','hwn','cust','pykt'));
+        $status = Status_OP::all();
+        $lyob = LayananBerobat::with('hewan','customer','penyakit','status_op')->findorfail($id);
+        return view('/berobat/edit-layanan-berobat',compact('lyob','hwn','cust','pykt','status'));
     }
 
     /**
