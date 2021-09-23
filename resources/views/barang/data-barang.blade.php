@@ -62,7 +62,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td>{{ $item->id }}</td>
                     <td>{{ $item->namabarang }}</td>
                     <td>{{ $item->kategori->namakategori }}</td>
-                    <td>{{ $item->hargabarang }}</td>
+                    <td><?php echo "Rp. ".number_format($item->hargabarang);?></td>
                     <td>{{ $item->stokbarang }}</td>
                     <td>
                         <a href="{{ url('barang/edit-barang',$item->id) }}"><i class="fas fa-edit"></i></a> | <a href="{{ url('barang/delete-barang',$item->id) }}"><i class="fas fa-trash-alt" style="color: red"></i></a>

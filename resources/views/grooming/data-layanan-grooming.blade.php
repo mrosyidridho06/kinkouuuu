@@ -64,7 +64,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td>{{ $item->grooming->namagrooming }}</td>
                     <td>{{ $item->hewan->namahewan }}</td>
                     <td>{{ $item->customer->namacust }}</td>
-                    <td><?php echo number_format($item->grooming->hargagrooming); ?></td>
+                    <td><?php echo "Rp. ".number_format($item->grooming->hargagrooming); ?></td>
                     <td>
                         <a href="{{ url('grooming/edit-layanan-grooming',$item->id) }}"><i class="fas fa-edit"></i></a> | <a href="{{ url('grooming/delete-layanan-grooming',$item->id) }}"><i class="fas fa-trash-alt" style="color: red"></i></a> | <a href="{{ url('grooming/print-layanan-grooming-detail',$item->id) }}"><i class="fa fa-print" style="color: rgb(0, 0, 0)"></i></a>
                     </td>
