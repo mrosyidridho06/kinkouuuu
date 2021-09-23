@@ -125,12 +125,12 @@ class LayananBerobatController extends Controller
     public function print()
     {
         $datalyob = LayananBerobat::all();
-        return view('grooming/print-layanan-berobat', compact('datalyob'));
+        return view('berobat/print-layanan-berobat', compact('datalyob'));
     }
 
     public function printdetail($id)
     {
         $datalyobdetail = LayananBerobat::with('hewan','customer','penyakit','status_op')->findorfail($id);
-        return view('/grooming/print-layanan-berobat-detail', compact('datalyobdetail'));
+        return view('/berobat/print-layanan-berobat-detail', compact('datalyobdetail'));
     }
 }

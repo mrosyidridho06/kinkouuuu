@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kwitansi Grooming | Invoice Print</title>
+  <title>Kwitansi Berobat | Invoice Print</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -94,7 +94,7 @@
             <table class="table">
               <tr>
                 <th>Total Harga:</th>
-                <td><?php echo "Rp. ".number_format($datagroodetail->grooming->hargagrooming); ?></td>
+                <td><?php echo "Rp. ".number_format($datalyobdetail->biayaobat); ?></td>
               </tr>
             </table>
           </div>
