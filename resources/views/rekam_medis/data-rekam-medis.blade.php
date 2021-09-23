@@ -41,6 +41,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main content -->
     <div class="content">
         <div class="card card-info card-outline">
+          <div class="card-header">
+            <div class="card-tools">
+              <a href="{{ route('print-rekam-medis') }}" class="btn btn-primary">Print Laporan <i class="fas fa-plus-square"></i></a>
+            </div>
+        </div>
             
             <div class="card-body">
               <table class="table table-bordered">

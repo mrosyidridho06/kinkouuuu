@@ -112,4 +112,10 @@ class RekamMedisController extends Controller
         $rm->delete();
         return back()->with('info', 'Data Berhasil Dihapus');
     }
+
+    public function print()
+    {
+        $datarm = RekamMedis::all();
+        return view('rekam_medis/print-rekam-medis', compact('datarm'));
+    }
 }

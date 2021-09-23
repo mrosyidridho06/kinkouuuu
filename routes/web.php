@@ -86,4 +86,5 @@ Route::post('/rekam_medis/simpan-rekam-medis','App\Http\Controllers\RekamMedisCo
 Route::get('/rekam_medis/edit-rekam-medis/{id}','App\Http\Controllers\RekamMedisController@edit')->name('edit-rekam-medis');
 Route::post('/rekam_medis/update-rekam-medis/{id}','App\Http\Controllers\RekamMedisController@update')->name('update-rekam-medis');
 Route::get('/rekam_medis/delete-rekam-medis/{id}','App\Http\Controllers\RekamMedisController@destroy')->name('deletephp a-rekam-medis');
+Route::get('/rekam_medis/print-rekam-medis','App\Http\Controllers\RekamMedisController@print')->name('print-rekam-medis');
 
