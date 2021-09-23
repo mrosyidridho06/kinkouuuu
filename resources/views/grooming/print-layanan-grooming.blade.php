@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Laporan Penitipan| Invoice Print</title>
+  <title>Laporan Grooming | Invoice Print</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -48,32 +48,30 @@
       <div class="col-12 table-responsive">
         <table class="table table-striped">
           <thead>
-          <tr>
-            <th>ID</th>
-            <th>Keterangan</th>
-            <th>Nama Customer</th>
-            <th>Tanggal Masuk</th>
-            <th>Tanggal Keluar</th>
-            <th>Total Harga</th>
-          </tr>
+            <tr>
+              <th>ID</th>
+              <th>Keterangan</th>
+              <th>Nama Customer</th>
+              <th>Jenis Hewan</th>
+              <th>Harga</th>
+            </tr>
           </thead>
           <tbody>
-            @foreach ($datatitip as $item)
+            @foreach ($datagroo as $item)
             <tr>
               <td>{{ $item->id}}</td>
-              <td>Keterangan</td>
+              <td>Grooming</td>
               <td>{{ $item->customer->namacust }}</td>
-              <td>{{ $item->tglin }}</td>
-              <td>{{ $item->tglout }}</td>
-              <td><?php echo "Rp. ".number_format($item->biayatitip); ?></td>
+              <td>{{ $item->hewan->jenishewan }} - ( {{ $item->hewan->namahewan }} )</td>
+              <td><?php echo "Rp. ".number_format($item->grooming->hargagrooming); ?></td>
             </tr> 
             @endforeach
           
           </tbody>
         </table>
       </div>
-      <!-- /.col -->
     </div>
+      <!-- /.col -->
     <!-- /.row -->
 
     <!-- /.row -->

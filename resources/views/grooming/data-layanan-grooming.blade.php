@@ -44,6 +44,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="card-header">
                 <div class="card-tools">
                   <a href="{{ route('create-layanan-grooming') }}" class="btn btn-success">Tambah Data <i class="fas fa-plus-square"></i></a>
+                  <a href="{{ route('print-layanan-grooming') }}" class="btn btn-primary">Print Laporan <i class="fas fa-plus-square"></i></a>
                 </div>
             </div>
             
@@ -65,7 +66,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td>{{ $item->customer->namacust }}</td>
                     <td><?php echo number_format($item->grooming->hargagrooming); ?></td>
                     <td>
-                        <a href="{{ url('grooming/edit-layanan-grooming',$item->id) }}"><i class="fas fa-edit"></i></a> | <a href="{{ url('grooming/delete-layanan-grooming',$item->id) }}"><i class="fas fa-trash-alt" style="color: red"></i></a>
+                        <a href="{{ url('grooming/edit-layanan-grooming',$item->id) }}"><i class="fas fa-edit"></i></a> | <a href="{{ url('grooming/delete-layanan-grooming',$item->id) }}"><i class="fas fa-trash-alt" style="color: red"></i></a> | <a href="{{ url('grooming/print-layanan-grooming-detail',$item->id) }}"><i class="fa fa-print" style="color: rgb(0, 0, 0)"></i></a>
                     </td>
                   </tr>
                   @endforeach

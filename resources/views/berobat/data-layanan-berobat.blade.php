@@ -44,6 +44,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="card-header">
                 <div class="card-tools">
                   <a href="{{ route('create-layanan-berobat') }}" class="btn btn-success">Tambah Data <i class="fas fa-plus-square"></i></a>
+                  <a href="{{ route('print-layanan-berobat') }}" class="btn btn-primary">Print Laporan <i class="fas fa-plus-square"></i></a>
                 </div>
             </div>
             
@@ -69,7 +70,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td>{{ $item->tglobat }}</td>
                     <td><?php echo number_format($item->biayaobat); ?></td>
                     <td>
-                        <a href="{{ url('berobat/edit-layanan-berobat',$item->id) }}"><i class="fas fa-edit"></i></a> | <a href="{{ url('berobat/delete-layanan-berobat',$item->id) }}"><i class="fas fa-trash-alt" style="color: red"></i></a>
+                        <a href="{{ url('berobat/edit-layanan-berobat',$item->id) }}"><i class="fas fa-edit"></i></a> | <a href="{{ url('berobat/delete-layanan-berobat',$item->id) }}"><i class="fas fa-trash-alt" style="color: red"></i></a> | <a href="{{ url('berobat/print-layanan-berobat-detail',$item->id) }}"><i class="fa fa-print" style="color: rgb(0, 0, 0)"></i></a>
                     </td>
                   </tr>
                   @endforeach

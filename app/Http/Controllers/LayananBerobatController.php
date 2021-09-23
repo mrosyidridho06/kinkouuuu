@@ -121,4 +121,16 @@ class LayananBerobatController extends Controller
         $lyob->delete();
         return back()->with('info', 'Data Berhasil Dihapus');
     }
+
+    public function print()
+    {
+        $datalyob = LayananBerobat::all();
+        return view('grooming/print-layanan-berobat', compact('datalyob'));
+    }
+
+    public function printdetail($id)
+    {
+        $datalyobdetail = LayananBerobat::with('hewan','customer','penyakit','status_op')->findorfail($id);
+        return view('/grooming/print-layanan-berobat-detail', compact('datalyobdetail'));
+    }
 }

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Laporan Penitipan| Invoice Print</title>
+  <title>Kwitansi Grooming | Invoice Print</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -52,22 +52,19 @@
             <th>ID</th>
             <th>Keterangan</th>
             <th>Nama Customer</th>
-            <th>Tanggal Masuk</th>
-            <th>Tanggal Keluar</th>
-            <th>Total Harga</th>
+            <th>Jenis Hewan</th>
+            <th>Harga</th>
           </tr>
           </thead>
           <tbody>
-            @foreach ($datatitip as $item)
+             
             <tr>
-              <td>{{ $item->id}}</td>
-              <td>Keterangan</td>
-              <td>{{ $item->customer->namacust }}</td>
-              <td>{{ $item->tglin }}</td>
-              <td>{{ $item->tglout }}</td>
-              <td><?php echo "Rp. ".number_format($item->biayatitip); ?></td>
+              <td>{{ $datagroodetail->id}}</td>
+              <td>Grooming</td>
+              <td>{{ $datagroodetail->customer->namacust }}</td>
+              <td>{{ $datagroodetail->hewan->jenishewan }} - ( {{ $datagroodetail->hewan->namahewan }} )</td>
+              <td><?php echo "Rp. ".number_format($datagroodetail->grooming->hargagrooming); ?></td>
             </tr> 
-            @endforeach
           
           </tbody>
         </table>
@@ -75,7 +72,29 @@
       <!-- /.col -->
     </div>
     <!-- /.row -->
-
+    <div class="row">
+        <!-- accepted payments column -->
+        <div class="col-6">
+          
+  
+          <h5 class="text-muted well well-sm shadow-none" style="margin-top: 10px;" align="center" >
+            -Sehat Sekarang dan Seterusnya-
+          </h5>
+        </div>
+        <!-- /.col -->
+        <div class="col-6">
+  
+          <div class="table-responsive">
+            <table class="table">
+              <tr>
+                <th>Total Harga:</th>
+                <td><?php echo "Rp. ".number_format($datagroodetail->grooming->hargagrooming); ?></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <!-- /.col -->
+      </div>
     <!-- /.row -->
   </section>
   <!-- /.content -->

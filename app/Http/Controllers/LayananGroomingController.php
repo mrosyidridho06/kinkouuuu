@@ -105,4 +105,16 @@ class LayananGroomingController extends Controller
         $lygro->delete();
         return back()->with('info', 'Data Berhasil Dihapus');
     }
+
+    public function print()
+    {
+        $datagroo = Layanan_Grooming::all();
+        return view('grooming/print-layanan-grooming', compact('datagroo'));
+    }
+
+    public function printdetail($id)
+    {
+        $datagroodetail = Layanan_Grooming::with('hewan','customer')->findorfail($id);
+        return view('/grooming/print-layanan-grooming-detail', compact('datagroodetail'));
+    }
 }
