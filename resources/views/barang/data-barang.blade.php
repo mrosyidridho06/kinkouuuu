@@ -51,7 +51,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <table class="table table-bordered">
                   <tr>
                     <th>ID</th>
-                    <th>Nama</th>
+                    <th>Nama Produk</th>
                     <th>Kategori</th>
                     <th>Harga</th>
                     <th>Stok</th>

@@ -48,6 +48,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <form action="{{ route('simpan-layanan-berobat') }}" method="POST">
                 {{ csrf_field() }}
                 <div class="form-group">
+                  <label for="">Nama Hewan</label>
                   <select class="form-control select2" style="width:100%;" name="hewan_id" id="hewan_id">
                     <option disabled value>Pilih Hewan</option>
                       @foreach ($hwn as $item)
@@ -56,6 +57,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </select>
                 </div>
                 <div class="form-group">
+                  <label for="">Customer</label>
                   <select class="form-control select2" style="width:100%;" name="customer_id" id="customer_id">
                     <option disabled value>Pilih Customer</option>
                       @foreach ($cust as $item)
@@ -64,9 +66,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </select>
                 </div>
                 <div class="form-group">
+                  <label for="">Keluhan</label>
                   <textarea name="keluhan_berobat" id="keluhan_berobat" class="form-control" placeholder="Keluhan"></textarea>
                 </div>
                 <div class="form-group">
+                  <label for="">Penyakit</label>
                   <select class="form-control select2" style="width:100%;" name="penyakit_id" id="penyakit_id">
                     <option disabled value>Pilih Penyakit</option>
                       @foreach ($pykt as $item)
@@ -75,6 +79,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </select>
                 </div>
                 <div class="form-group">
+                  <label for="">Status Operasi</label>
                   <select class="form-control select2" style="width:100%;" name="status_op_id" id="status_op_id">
                     <option disabled value>Pilih Status</option>
                       @foreach ($status as $item)
@@ -83,9 +88,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </select>
                 </div>
                 <div class="form-group">
+                  <label for="">Tanggal Periksa</label>
                   <input type="date" name="tglobat" id="tglobat" class="form-control" placeholder="Tanggal Berobat">
                 </div>
                 <div class="form-group">
+                  <label for="">Biaya Periksa</label>
                   <input type="text" name="biayaobat" id="biayaobat" class="form-control" placeholder="Biaya Obat" value="0">
                 </div>
                   <div class="form-group">

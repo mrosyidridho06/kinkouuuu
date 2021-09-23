@@ -48,12 +48,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <form action="{{ url('customer/update-customer',$cust->id) }}" method="POST">
                 {{ csrf_field() }}
                   <div class="form-group">
+                    <label for="">Nama Customer </label>
                     <input type="text" name="namacust" id="namacust" class="form-control" placeholder="Nama Customer" value="{{ $cust->namacust }}">
                   </div>
                   <div class="form-group">
+                    <label for="">Alamat </label>
                     <textarea name="alamatcust" id="alamatcust" class="form-control" placeholder="Alamat Customer">{{ $cust->alamatcust }}</textarea>
                   </div>
                   <div class="form-group">
+                    <label for="">Nomor Telpon</label>
                     <input type="text" name="telpcust" id="telpcust" class="form-control" placeholder="Telp Customer" value="{{ $cust->telpcust }}">
                   </div>
                   <div class="form-group">

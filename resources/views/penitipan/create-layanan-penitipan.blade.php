@@ -48,6 +48,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <form action="{{ route('simpan-layanan-penitipan') }}" method="POST">
                 {{ csrf_field() }}
                 <div class="form-group">
+                  <label for="">Nama Peliharaan </label>
                   <select class="form-control select2" style="width:100%;" name="hewan_id" id="hewan_id">
                     <option disabled value>Pilih Hewan</option>
                       @foreach ($hwn as $item)
@@ -56,6 +57,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </select>
                 </div>
                 <div class="form-group">
+                  <label for="">Nama Pemilik (Customer)</label>
                   <select class="form-control select2" style="width:100%;" name="customer_id" id="customer_id">
                     <option disabled value>Pilih Customer</option>
                       @foreach ($cust as $item)
@@ -64,12 +66,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </select>
                 </div>
                 <div class="form-group">
+                  <label for=""> Tanggal Masuk</label>
                   <input type="date" name="tglin" id="tglin" class="form-control" placeholder="Tanggal Masuk">
                 </div>
                 <div class="form-group">
+                  <label for=""> Tanggal Keluar </label>
                   <input type="date" name="tglout" id="tglout" class="form-control" placeholder="Tanggal Keluar">
                 </div>
                 <div class="form-group">
+                  <label for=""> Biaya Penitipan</label>
                   <input type="text" name="biayatitip" id="biayatitip" class="form-control" placeholder="Biaya Titip">
                 </div>
                   <div class="form-group">

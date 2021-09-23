@@ -48,6 +48,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <form action="{{ url('berobat/update-layanan-berobat',$lyob->id) }}" method="POST">
                 {{ csrf_field() }}
             <div class="form-group">
+              <label for="">Nama Peliharaan </label>
               <select class="form-control select2" style="width:100%;" name="hewan_id" id="hewan_id">
                 <option disabled value>Pilih Hewan</option>
                 <option value="{{ $lyob->hewan_id }}">{{ $lyob->hewan->namahewan }}</option>
@@ -57,6 +58,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </select>
             </div>
               <div class="form-group">
+                <label for="">Nama Pemilik</label>
                 <select class="form-control select2" style="width:100%;" name="customer_id" id="customer_id">
                   <option disabled value>Pilih Customer</option>
                   <option value="{{ $lyob->customer_id }}">{{ $lyob->customer->namacust }}</option>
@@ -66,9 +68,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </select>
               </div>
               <div class="form-group">
+                <label for="">Keluhan</label>
                 <textarea name="keluhan_berobat" id="keluhan_berobat" class="form-control">{{$lyob->keluhan_berobat}}</textarea>
               </div>
               <div class="form-group">
+                <label for="">Penyakit </label>
                 <select class="form-control select2" style="width:100%;" name="penyakit_id" id="penyakit_id">
                   <option disabled value>Pilih Penyakit</option>
                   <option value="{{ $lyob->penyakit_id }}">{{ $lyob->penyakit->namapenyakit }}</option>
@@ -78,6 +82,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </select>
               </div>
               <div class="form-group">
+                <label for="">Status Operasi</label>
                 <select class="form-control select2" style="width:100%;" name="status_op_id" id="status_op_id">
                   <option disabled value>Pilih Status</option>
                   <option value="{{ $lyob->status_op_id }}">{{ $lyob->status_op->status }}</option>
@@ -87,9 +92,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </select>
               </div>
               <div class="form-group">
+                <label for="">Tanggal Periksa</label>
                 <input type="date" name="tglobat" id="tglobat" class="form-control" placeholder="Tanggal Berobat" value="{{ $lyob->tglobat }}">
               </div>
               <div class="form-group">
+                <label for="">Biaya Periksa </label>
                 <input type="text" name="biayaobat" id="biayaobat" class="form-control" placeholder="Biaya Berobat" value="{{ $lyob->biayaobat }}">
               </div>
               <div class="form-group">

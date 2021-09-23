@@ -48,9 +48,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <form action="{{ route('simpan-barang') }}" method="POST">
                 {{ csrf_field() }}
                   <div class="form-group">
+                    <label for="">Nama Barang</label>
                     <input type="text" name="namabarang" id="namabarang" class="form-control" placeholder="Nama Barang">
                   </div>
                   <div class="form-group">
+                    <label for="">Kategori Barang</label>
                     <select class="form-control select2" style="width:100%;" name="kategori_id" id="kategori_id">
                       <option disabled value>Pilih Kategori</option>
                         @foreach ($kat as $item)
@@ -59,9 +61,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </select>
                   </div>
                   <div class="form-group">
+                    <label for="">Harga</label>
                     <input type="text" name="hargabarang" id="hargabarang" class="form-control" placeholder="Harga Barang">
                   </div>
                   <div class="form-group">
+                    <label for="">Jumlah Stok</label>
                     <input type="text" name="stokbarang" id="stokbarang" class="form-control" placeholder="Stok Barang">
                   </div>
                   <div class="form-group">

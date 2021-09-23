@@ -48,6 +48,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <form action="{{ url('penitipan/update-layanan-penitipan',$titip->id) }}" method="POST">
                 {{ csrf_field() }}
             <div class="form-group">
+              <label for="">Nama Peliharaan</label>
               <select class="form-control select2" style="width:100%;" name="hewan_id" id="hewan_id">
                 <option disabled value>Pilih Hewan</option>
                 <option value="{{ $titip->hewan_id }}">{{ $titip->hewan->namahewan }}</option>
@@ -57,6 +58,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </select>
             </div>
               <div class="form-group">
+                <label for="">Nama Pemilik (Customer) </label>
                 <select class="form-control select2" style="width:100%;" name="customer_id" id="customer_id">
                   <option disabled value>Pilih Customer</option>
                   <option value="{{ $titip->customer_id }}">{{ $titip->customer->namacust }}</option>
@@ -66,12 +68,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </select>
               </div>
               <div class="form-group">
+                <label for="">Tanggal Masuk</label>
                 <input type="date" name="tglin" id="tglin" class="form-control" placeholder="Tanggal Masuk" value="{{ $titip->tglin }}">
               </div>
               <div class="form-group">
+                <label for="">Tanggal Keluar </label>
                 <input type="date" name="tglout" id="tglout" class="form-control" placeholder="Tanggal Keluar" value="{{ $titip->tglout }}">
               </div>
               <div class="form-group">
+                <label for="">Biaya Penitipan </label>
                 <input type="text" name="biayatitip" id="biayatitip" class="form-control" placeholder="Biaya Titip" value="{{ $titip->biayatitip }}">
               </div>
               <div class="form-group">

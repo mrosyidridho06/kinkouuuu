@@ -48,12 +48,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <form action="{{ route('simpan-hewan') }}" method="POST">
                 {{ csrf_field() }}
                   <div class="form-group">
+                    <label for="">Nama Peliharaan </label>
                     <input type="text" name="namahewan" id="namahewan" class="form-control" placeholder="Nama Hewan">
                   </div>
                   <div class="form-group">
+                    <label for="">Jenis Hewan</label>
                     <input type="text" name="jenishewan" id="jenishewan" class="form-control" placeholder="Jenis Hewan"></textarea>
                   </div>
                   <div class="form-group">
+                    <label for="">Nama Pemilik (Customer)</label>
                     <select class="form-control select2" style="width:100%;" name="customer_id" id="customer_id">
                       <option disabled value>Pilih Customer</option>
                         @foreach ($cust as $item)

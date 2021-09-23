@@ -48,12 +48,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <form action="{{ route('simpan-grooming') }}" method="POST">
                 {{ csrf_field() }}
                   <div class="form-group">
+                    <label for="">Grooming</label>
                     <input type="text" name="namagrooming" id="namagrooming" class="form-control" placeholder="Nama Grooming">
                   </div>
                   <div class="form-group">
+                    <label for="">Harga Layanan</label>
                     <input type="text" name="hargagrooming" id="hargagrooming" class="form-control" placeholder="Harga Grooming"></textarea>
                   </div>
                   <div class="form-group">
+                    <label for="">Keterangan </label>
                     <input type="text" name="ketgrooming" id="ketgrooming" class="form-control" placeholder="Ket Grooming">
                   </div>
                   <div class="form-group">

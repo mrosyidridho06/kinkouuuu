@@ -48,6 +48,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <form action="{{ url('grooming/update-layanan-grooming',$lygro->id) }}" method="POST">
                 {{ csrf_field() }}
             <div class="form-group">
+              <label for="">Pilih Layanan </label>
               <select class="form-control select2" style="width:100%;" name="grooming_id" id="grooming_id">
                 <option disabled value>Pilih Grooming</option>
                 <option value="{{ $lygro->grooming_id }}">{{ $lygro->grooming->namagrooming }}</option>
@@ -57,6 +58,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </select>
             </div>
             <div class="form-group">
+              <label for="">Nama Peliharaan</label>
               <select class="form-control select2" style="width:100%;" name="hewan_id" id="hewan_id">
                 <option disabled value>Pilih Hewan</option>
                 <option value="{{ $lygro->hewan_id }}">{{ $lygro->hewan->namahewan }}</option>
@@ -66,6 +68,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </select>
             </div>
               <div class="form-group">
+                <label for="">Nama Pemilik (Customer) </label>
                 <select class="form-control select2" style="width:100%;" name="customer_id" id="customer_id">
                   <option disabled value>Pilih Customer</option>
                   <option value="{{ $lygro->customer_id }}">{{ $lygro->customer->namacust }}</option>

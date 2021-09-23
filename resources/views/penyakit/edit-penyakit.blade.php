@@ -48,9 +48,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <form action="{{ url('penyakit/update-penyakit',$pykt->id) }}" method="POST">
                 {{ csrf_field() }}
                   <div class="form-group">
+                    <label for="">Nama Penyakit</label>
                     <input type="text" name="namapenyakit" id="namapenyakit" class="form-control" placeholder="Nama Penyakit" value="{{ $pykt->namapenyakit }}">
                   </div>
                   <div class="form-group">
+                    <label for="">Keterangan </label>
                     <input type="text" name="ketpenyakit" id="ketpenyakit" class="form-control" placeholder="Ket Penyakit" value="{{ $pykt->ketpenyakit }}">
                   </div>
                   <div class="form-group">
