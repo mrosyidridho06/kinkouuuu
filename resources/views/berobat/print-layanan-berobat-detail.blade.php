@@ -53,6 +53,7 @@
             <th>Keterangan</th>
             <th>Nama Customer</th>
             <th>Jenis Hewan</th>
+            <th>Keluhan</th>
             <th>Nama Penyakit</th>
             <th>Status Operasi</th>
             <th>Tanggal Berobat</th>
@@ -66,6 +67,7 @@
               <td>Berobat</td>
               <td>{{ $datalyobdetail->customer->namacust }}</td>
               <td>{{ $datalyobdetail->hewan->jenishewan }} - ( {{ $datalyobdetail->hewan->namahewan }} )</td>
+              <td>{{ $datalyobdetail->keluhan_berobat }}</td>
               <td>{{ $datalyobdetail->penyakit->namapenyakit }}</td>
               <td>{{ $datalyobdetail->status_op->status }}</td>
               <td>{{ $datalyobdetail->tglobat}}</td>
