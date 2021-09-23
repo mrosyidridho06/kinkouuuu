@@ -50,6 +50,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="card-body">
               <table class="table table-bordered">
                   <tr>
+                    <th>No</th>
                     <th>ID</th>
                     <th>Nama Hewan</th>
                     <th>Nama Customer</th>
@@ -59,8 +60,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <th>Tanggal</th>
                     <th>Total Biaya</th>
                   </tr>
+                  <?php $no=1; ?>
                   @foreach ($datarm as $item)
                   <tr>
+                    <td>{{ $no++ }}</td>
                     <td>{{ $item->id }}</td>
                     <td>{{ $item->hewan->namahewan }}</td>
                     <td>{{ $item->customer->namacust }}</td>
