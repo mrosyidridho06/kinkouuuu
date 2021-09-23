@@ -54,6 +54,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <th>ID</th>
                     <th>Nama Hewan</th>
                     <th>Nama Customer</th>
+                    <th>Keluhan</th>
                     <th>Nama Penyakit</th>
                     <th>Status Operasi</th>
                     <th>Tanggal</th>
@@ -65,6 +66,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td>{{ $item->id }}</td>
                     <td>{{ $item->hewan->namahewan }}</td>
                     <td>{{ $item->customer->namacust }}</td>
+                    <td>{{ $item->keluhan_berobat }}</td>
                     <td>{{ $item->penyakit->namapenyakit }}</td>
                     <td>{{ $item->status_op->status }}</td>
                     <td>{{ $item->tglobat }}</td>

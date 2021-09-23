@@ -64,6 +64,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </select>
                 </div>
                 <div class="form-group">
+                  <textarea name="keluhan_berobat" id="keluhan_berobat" class="form-control" placeholder="Keluhan"></textarea>
+                </div>
+                <div class="form-group">
                   <select class="form-control select2" style="width:100%;" name="penyakit_id" id="penyakit_id">
                     <option disabled value>Pilih Penyakit</option>
                       @foreach ($pykt as $item)

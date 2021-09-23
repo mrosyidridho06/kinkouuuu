@@ -49,6 +49,7 @@ class LayananBerobatController extends Controller
         LayananBerobat::create([
             'hewan_id' => $request->hewan_id,
             'customer_id' => $request->customer_id,
+            'keluhan_berobat' => $request->keluhan_berobat,
             'penyakit_id' => $request->penyakit_id,
             'status_op_id' => $request->status_op_id,
             'tglobat' => $request->tglobat,
@@ -58,6 +59,7 @@ class LayananBerobatController extends Controller
         RekamMedis::create([
             'hewan_id' => $request->hewan_id,
             'customer_id' => $request->customer_id,
+            'keluhan_berobat' => $request->keluhan_berobat,
             'penyakit_id' => $request->penyakit_id,
             'status_op_id' => $request->status_op_id,
             'tglobat' => $request->tglobat,

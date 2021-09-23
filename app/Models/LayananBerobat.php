@@ -10,7 +10,7 @@ class LayananBerobat extends Model
     protected $table = "layanan_berobat";
     protected $primaryKey = "id";
     protected $fillable = [
-        'id','hewan_id','customer_id','penyakit_id','status_op_id','tglobat','biayaobat'
+        'id','hewan_id','customer_id','keluhan_berobat','penyakit_id','status_op_id','tglobat','biayaobat'
     ];
 
     public function hewan()

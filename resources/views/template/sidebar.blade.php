@@ -63,7 +63,7 @@
           </ul>
           <li class="nav-item">
             <a href="{{ route('data-layanan-berobat') }}" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="fas fa-prescription-bottle-alt" style="margin-right: 10px;"></i>
               <p>
                 Berobat
               </p>
@@ -71,7 +71,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('data-rekam-medis') }}" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="fas fa-notes-medical" style="margin-right: 10px;"></i>
               <p>
                 Rekam Medis
               </p>
@@ -79,7 +79,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('data-layanan-grooming') }}" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="fas fa-cat" style="margin-right: 5px;"></i>
               <p>
                 Grooming
               </p>
@@ -87,7 +87,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('data-layanan-penitipan') }}" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="fas fa-clinic-medical" style="margin-right: 5px;"></i>
               <p>
                 Penitipan
               </p>
