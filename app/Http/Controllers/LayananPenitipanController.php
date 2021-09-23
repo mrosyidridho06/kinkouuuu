@@ -59,7 +59,7 @@ class LayananPenitipanController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -108,5 +108,11 @@ class LayananPenitipanController extends Controller
     {
         $datatitip = LayananPenitipan::all();
         return view('penitipan/print-layanan-penitipan', compact('datatitip'));
+    }
+
+    public function printdetail($id)
+    {
+        $datatitipdetail = LayananPenitipan::with('hewan','customer')->findorfail($id);
+        return view('/penitipan/print-layanan-penitipan-detail', compact('datatitipdetail'));
     }
 }
