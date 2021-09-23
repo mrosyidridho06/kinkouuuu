@@ -68,7 +68,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td>{{ $item->customer->namacust }}</td>
                     <td>{{ $item->tglin }}</td>
                     <td>{{ $item->tglout }}</td>
-                    <td><?php echo number_format($item->biayatitip); ?></td>
+                    <td><?php echo "Rp. ".number_format($item->biayatitip); ?></td>
                     <td>
                         <a href="{{ url('penitipan/edit-layanan-penitipan',$item->id) }}"><i class="fas fa-edit"></i></a> | <a href="{{ url('penitipan/delete-layanan-penitipan',$item->id) }}"><i class="fas fa-trash-alt" style="color: red"></i></a>  | <a href="{{ url('penitipan/print-layanan-penitipan-detail',$item->id) }}"><i class="fa fa-print" style="color: rgb(0, 0, 0)"></i></a>
                     </td>
