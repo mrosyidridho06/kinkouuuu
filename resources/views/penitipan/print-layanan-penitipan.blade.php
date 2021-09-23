@@ -70,12 +70,39 @@
             @endforeach
           
           </tbody>
-        </table>
+        </table> 
       </div>
       <!-- /.col -->
     </div>
     <!-- /.row -->
+    <div class="row">
+      <!-- accepted payments column -->
+      <div class="col-6">
+        
 
+        <h5 class="text-muted well well-sm shadow-none" style="margin-top: 10px;" align="center" >
+          -Sehat Sekarang dan Seterusnya-
+        </h5>
+      </div>
+      <!-- /.col -->
+      <div class="col-6">
+
+        <div class="table-responsive">
+          <table class="table">
+            <tr>
+              <th>Total Masuk :</th>
+              <td><?php
+              $total=0;
+              foreach($datatitip as $key){
+                  $total= $total + $key->biayatitip;
+              }  
+              echo "Rp. ".number_format($total); ?></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <!-- /.col -->
+    </div>
     <!-- /.row -->
   </section>
   <!-- /.content -->
