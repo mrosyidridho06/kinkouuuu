@@ -23,7 +23,7 @@
         <h2 class="page-header">
           <img src="{{asset('Image/logo.jpeg')}}" width="30px" > KINKOU PETSHOP
           <small class="float-right">
-            <p><span id="datetime"></span></p>
+            <p style="font-size: 18px; "><span id="datetime"></span></p>
             <script>
                 var dt = new Date();
                 document.getElementById("datetime").innerHTML = dt.toLocaleString();
@@ -31,6 +31,11 @@
 
           </small>
         </h2>
+        <div class="col-4" >
+        <p style="font-size: 12px">Alamat : Jl. Purnawirawan Raya No. 76, Kel. Gunung Terang, Kota Bandar Lampung.
+            Kode Pos : 35152/0721-5646580
+            HP : 08117911150</p>
+        </div>
       </div>
       <!-- /.col -->
     </div>
@@ -50,7 +55,7 @@
             <th>Jenis Hewan</th>
             <th>Tanggal Masuk</th>
             <th>Tanggal Keluar</th>
-            <th>Total Harga</th>
+            <th>Harga</th>
           </tr>
           </thead>
           <tbody>
@@ -71,7 +76,29 @@
       <!-- /.col -->
     </div>
     <!-- /.row -->
-
+    <div class="row">
+        <!-- accepted payments column -->
+        <div class="col-6">
+          
+  
+          <h5 class="text-muted well well-sm shadow-none" style="margin-top: 10px;" align="center" >
+            -Sehat Sekarang dan Seterusnya-
+          </h5>
+        </div>
+        <!-- /.col -->
+        <div class="col-6">
+  
+          <div class="table-responsive">
+            <table class="table">
+              <tr>
+                <th>Total Harga:</th>
+                <td><?php echo "Rp. ".number_format($datatitipdetail->biayatitip); ?></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <!-- /.col -->
+      </div>
     <!-- /.row -->
   </section>
   <!-- /.content -->
