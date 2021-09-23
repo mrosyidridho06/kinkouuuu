@@ -75,6 +75,7 @@ Route::get('/penitipan/edit-layanan-penitipan/{id}','App\Http\Controllers\Layana
 Route::post('/penitipan/update-layanan-penitipan/{id}','App\Http\Controllers\LayananPenitipanController@update')->name('update-layanan-penitipan');
 Route::get('/penitipan/delete-layanan-penitipan/{id}','App\Http\Controllers\LayananPenitipanController@destroy')->name('deletephp a-layanan-penitipan');
 Route::get('/penitipan/print-layanan-penitipan','App\Http\Controllers\LayananPenitipanController@print')->name('print-layanan-penitipan');
+Route::get('/penitipan/print-layanan-penitipan-detail/{id}','App\Http\Controllers\LayananPenitipanController@printdetail')->name('print-layanan-penitipan-detail');
 
 Route::get('/rekam_medis/data-rekam-medis','App\Http\Controllers\RekamMedisController@index')->name('data-rekam-medis');
 Route::get('/rekam_medis/create-rekam-medis','App\Http\Controllers\RekamMedisController@create')->name('create-rekam-medis');
