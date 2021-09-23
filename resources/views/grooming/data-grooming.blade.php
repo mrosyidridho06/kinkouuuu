@@ -60,7 +60,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <tr>
                     <td>{{ $item->id }}</td>
                     <td>{{ $item->namagrooming }}</td>
-                    <td>{{ $item->hargagrooming }}</td>
+                    <td><?php echo number_format($item->hargagrooming); ?></td>
                     <td>{{ $item->ketgrooming }}</td>
                     <td>
                         <a href="{{ url('grooming/edit-grooming',$item->id) }}"><i class="fas fa-edit"></i></a> | <a href="{{ url('grooming/delete-grooming',$item->id) }}"><i class="fas fa-trash-alt" style="color: red"></i></a>

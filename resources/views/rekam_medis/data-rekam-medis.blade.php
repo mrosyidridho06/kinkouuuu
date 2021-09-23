@@ -61,7 +61,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td>{{ $item->penyakit->namapenyakit }}</td>
                     <td>{{ $item->status_op->status }}</td>
                     <td>{{ $item->tglobat }}</td>
-                    <td>{{ $item->biayaobat }}</td>
+                    <td><?php echo number_format($item->biayaobat); ?></td>
                   </tr>
                   @endforeach
               </table>
