@@ -66,7 +66,6 @@ Route::post('/berobat/simpan-layanan-berobat','App\Http\Controllers\LayananBerob
 Route::get('/berobat/edit-layanan-berobat/{id}','App\Http\Controllers\LayananBerobatController@edit')->name('edit-layanan-berobat');
 Route::post('/berobat/update-layanan-berobat/{id}','App\Http\Controllers\LayananBerobatController@update')->name('update-layanan-berobat');
 Route::get('/berobat/delete-layanan-berobat/{id}','App\Http\Controllers\LayananBerobatController@destroy')->name('deletephp a-layanan-berobat');
-Route::get('/berobat/cetak-layanan-berobat/{id}','App\Http\Controllers\LayananBerobatController@cetakBerobat')->name('cetak-layanan-berobat');
 
 Route::get('/penitipan/data-layanan-penitipan','App\Http\Controllers\LayananPenitipanController@index')->name('data-layanan-penitipan');
 Route::get('/penitipan/create-layanan-penitipan','App\Http\Controllers\LayananPenitipanController@create')->name('create-layanan-penitipan');

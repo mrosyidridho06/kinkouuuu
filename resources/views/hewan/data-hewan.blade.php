@@ -63,7 +63,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td>{{ $item->jenishewan }}</td>
                     <td>{{ $item->customer->namacust }}</td>
                     <td>
-                        <a href="{{ url('hewan/edit-hewan',$item->id) }}"><i class="fas fa-edit"></i></a> | <a href="{{ url('hewan/delete-hewan',$item->id) }}"><i class="fas fa-trash-alt" style="color: red"></i></a> | <a href="{{ url('hewan/show-hewan',$item->id) }}"><i class="fas fa-info-circle" style="color:black"></i></a>
+                        <a href="{{ url('hewan/edit-hewan',$item->id) }}"><i class="fas fa-edit"></i></a> | <a href="{{ url('hewan/delete-hewan',$item->id) }}"><i class="fas fa-trash-alt" style="color: red"></i></a>
                     </td> 
                   </tr>
                   @endforeach

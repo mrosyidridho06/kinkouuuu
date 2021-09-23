@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use App\Models\Hewan;
-use App\Models\LayananBerobat;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -57,9 +56,7 @@ class HewanController extends Controller
      */
     public function show($id)
     {
-        $lyob = LayananBerobat::with('layanan_berobat','hewan','customer','penyakit')->findOrFail($id);
-        $hewan = Hewan::with('customer')->findorfail($id);
-        return view('hewan.show-hewan', compact('hewan','lyob'));
+        //
     }
 
     /**
