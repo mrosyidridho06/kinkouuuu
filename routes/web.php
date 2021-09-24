@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('beranda.beranda');
+    return view('welcome');
 });
 
 Route::get('/customer/data-customer','App\Http\Controllers\CustomerController@index')->name('data-customer');
